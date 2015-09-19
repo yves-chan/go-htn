@@ -42,10 +42,6 @@
 .jumbotron {
 	position: relative;
     background-color: #545454; 
-   /* width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden; */
 }
 
 #moodButton {
@@ -53,4 +49,9 @@
     width: 200px;
   	padding: 20px;
   	border-radius: 50px;
+}
+
+/*activity page elements*/
+#likeButtons {
+	padding: 20px;
 }

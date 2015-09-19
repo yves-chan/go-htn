@@ -14,16 +14,46 @@
 			</script>
 
 			<h2>Go <span class="element"></span></h2>	
-			</div>
-				<p data-ng-hide="authentication.user">Hello! Welcome to Go.</p>
-
-			<br> Insert Activity Image Here
-		
-			</div>
-
 		</div>
-		
-	</div>
+
+
+		<body>
+
+			<script>
+			  window.fbAsyncInit = function() {
+			    FB.init({
+			      appId      : '905471776199764',
+			      xfbml      : true,
+			      version    : 'v2.4'
+			    });
+			  };
+
+			  (function(d, s, id){
+			     var js, fjs = d.getElementsByTagName(s)[0];
+			     if (d.getElementById(id)) {return;}
+			     js = d.createElement(s); js.id = id;
+			     js.src = "//connect.facebook.net/en_US/sdk.js";
+			     fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+			</script>
+
+			<div class="fb-share-button" data-href="http://www.localhost:3000/#!/activity" data-layout="icon"></div>
+
+
+			<input type="image" src="/modules/users/img/buttons/lazyButton.png"/>
+
+			<div>
+			<input type="image" onclick="location.href='/#!/activity';" id="likeButtons" src="/modules/users/img//buttons/like_heart.png" />
+
+			<input type="image" onclick="location.href='/#!/activity';" id="likeButtons" src="/modules/users/img//buttons/dislike_heart.png" />
+			</div>
+
+
+		</body>
+
+
+
 	<br>Team RuntimeExceptionals
 	<br>Hack the North 2015
+	<br> Icons made by <a href="http://www.freepik.com">Freepik</a> from <a href="www.flatiron.com">www.flatiron.com</a>
 </section>
