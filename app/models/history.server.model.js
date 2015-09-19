@@ -16,9 +16,9 @@ var mongoose = require('mongoose'),
 var HistorySchema = new Schema({
     username: String,
     date: {
-        type:Date
+        type:[Date]
     },
-    activity: String
+    activity: [String]
 }, {collection:'histories'});
 
 
