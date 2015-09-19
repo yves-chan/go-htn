@@ -7,15 +7,29 @@
 		</div>
 		<br>
 		<div class="row">
-			<p class="lead">
-				Open-Source Full-Stack Solution For MEAN Applications
+			<p data-ng-hide="authentication.user">Hello! Welcome to Go.</p>
+			<p class="lead" data-ng-show="authentication.user">
+				Hello <span data-ng-bind="authentication.user.displayName"></span>, how are you feeling today?
 			</p>
+
+			<script>
+				$(function(){
+					$(".element").typed({
+						strings: ["play Basketball.", "on the Garibaldi hike.", "dance.", "join a martial arts class.",
+						"play board games with friends."],
+						typeSpeed: 50,
+						backDelay: 1500,
+						loop: true
+					});
+				});
+			</script>
+
+
+			<h2>Go <span class="element"></span></h2>
+
+
 		</div>
-		<div class="row">
-			<p>
-				<a class="btn btn-primary btn-lg" href="http://meanjs.org" target="_blank">Learn more</a>
-			</p>
-		</div>
+
 	</div>
 	<div>
 		<h2>Congrats! You've configured and run the sample application.</h2>
@@ -89,6 +103,6 @@
 			</ul>
 		</p>
 	</div>
-	<br>Enjoy &amp; Keep Us Updated,
-	<br>The MEAN.JS Team.
+	<br>Team RuntimeExceptionals
+	<br>Hack the North 2015
 </section>
