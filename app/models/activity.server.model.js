@@ -53,17 +53,17 @@ Activity.prototype.save = function() {
 /**
  * Find possible not used activity
  */
-ActivitySchema.statics.findUniqueActivity = function(name, callback) {
+ActivitySchema.statics.findUniqueActivity = function(mood,intensity, callback) {
     var _this = this;
 
     _this.findOne({
-        name: name
+    mood: mood, intensity:intensity
     }, function(err, activity) {
         if (!err) {
             if (!activity) {
                 callback(name);
             } else {
-                return _this.findUniqueActivity(name, callback);
+                return _this.findUniqueActivity(mood,intensity, callback);
             }
         } else {
             callback(null);

@@ -7,31 +7,22 @@
 
         <h3>Just a few questions to ask you...</h3>
         <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
-            <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+            <form name="userForm" data-ng-submit="processResults()" class="signin form-horizontal" novalidate autocomplete="off">
                 <fieldset>
                     <div class="form-group">
-                         <label for="firstName">Some question here</label>
-                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name">
+                         <p>Do you prefer outdoor or indoor?</p>
+                        <input type="radio" ng-model="mood" value="Adventurous" /> Yes
+                        <input type="radio" ng-model="mood" value="Lazy" /> No <br />
                     </div>
                     <div class="form-group">
-                         <label for="lastName">Another question here</label>
-                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Last Name">
+                         <label>After three miles of running, you ...</label> </br>
+                        <input type="radio" ng-model="intensity" value="1" /> Want to lie in bed <br />
+                        <input type="radio" ng-model="intensity" value="5" /> Are tired, but okay <br />
+                        <input type="radio" ng-model="intensity" value="10" /> Are just getting warmed up <br />
                     </div>
-                    <div class="form-group">
-                         <label for="email">Das it mayne</label>
-                        <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                         <label for="username">Im in love with the coco</label>
-                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <!-- <label for="password">Password</label> -->
-                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
-                    </div>
+
                     <div class="text-center form-group">
-                        <button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
-                        <a href="/#!/signin" class="show-signup">Sign in</a>
+                        <button type="submit" class="btn btn-large btn-primary">Get me something to Do!</button>
                     </div>
                     <div data-ng-show="error" class="text-center text-danger">
                         <strong data-ng-bind="error"></strong>
