@@ -17,11 +17,13 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
 		$scope.loadHistory = function() {
-			$http.get('/history/' + $scope.user.email).success(function(res) {
-				res.send();
+			$http.get('/history/' + $scope.user.email).success(function(history) {
+				console.log(history);
 			})
 
-		}
+		};
+
+		$scope.loadHistory();
 
 		// Check if provider is already in use with current user
 		$scope.isConnectedSocialAccount = function(provider) {
