@@ -15,5 +15,6 @@ module.exports = function(app) {
     var histories = require('../../app/controllers/history.server.controller');
 
     app.route('/history/record/:username/:activity').post(histories.record);
+    app.route('/history/:email').get(histories.getHistory);
 
 };

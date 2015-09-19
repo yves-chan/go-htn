@@ -17,3 +17,10 @@ exports.record = function(req, res) {
 
 
 };
+
+exports.getHistory = function(req, res) {
+	History.find({email: req.params.email}, function(err, history) {
+		if (err) return res.send(500, {error: err});
+		res.send(history);
+	});
+};
