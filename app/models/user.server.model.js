@@ -88,6 +88,12 @@ var UserSchema = new Schema({
 	},
 	resetPasswordExpires: {
 		type: Date
+	},
+	moodPreference: {
+		type: String
+	},
+	intensityPreference:{
+		type: String,
 	}
 });
 

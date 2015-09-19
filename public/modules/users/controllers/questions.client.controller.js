@@ -14,16 +14,15 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 			var mood = $scope.mood;
 			console.log(mood + intensity);
 
-			$http.get('/getActivity/'+ mood + '/' + intensity, {mood:mood, intensity:intensity}).success(function(response){
+			$http.post('/setMood/'+ username + '/' + mood).success(function(response){
 				console.log('The Activity is '+ response.name);
 				activity= response.name;
-				$http.post('/history/record/'+ username + '/' + activity).success(function(response){
+				$http.post('/setIntensity/'+ username + '/' + intensity).success(function(response){
 					console.log(response + 'saved');
 				});
 			});
-			//$http.post('/history/record/'+ username + '/' + activity).success(function(response){
-			//	console.log(response + 'saved');
-			//});
+
+			$location.path('#!/activity');
 
 		};
 
