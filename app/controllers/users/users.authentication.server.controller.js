@@ -84,14 +84,14 @@ exports.oauthCallback = function(strategy) {
 	return function(req, res, next) {
 		passport.authenticate(strategy, function(err, user, redirectURL) {
 			if (err || !user) {
-				console.log("err1 is" + err);
-				console.log("user: " + user);
+				console.log('err1 is' + err);
+				console.log('user: ' + user);
 
 				return res.redirect('/#!/signin');
 			}
 			req.login(user, function(err) {
 				if (err) {
-					console.log("err2");
+					console.log('err2');
 
 					return res.redirect('/#!/signin');
 
