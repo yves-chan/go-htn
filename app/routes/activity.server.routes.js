@@ -12,5 +12,6 @@ module.exports = function(app) {
     var activities = require('../../app/controllers/activity.server.controller');
 
     app.route('/getActivity/:mood/:intensity').get(activities.getActivity);
+    app.route('/getActivity/:name').get(activities.getActivityByName);
 
 };
