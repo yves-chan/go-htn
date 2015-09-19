@@ -4,7 +4,10 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 	function($scope, $http, $location, Authentication) {
 		$scope.authentication = Authentication;
 
-		var username = $scope.authentication.user;
+		var username = $scope.authentication.user.email;
+		console.log($scope.authentication);
+
+		var activity;
 
 		$scope.processResults = function() {
 			var intensity = $scope.intensity;
@@ -12,11 +15,15 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 			console.log(mood + intensity);
 
 			$http.get('/getActivity/'+ mood + '/' + intensity, {mood:mood, intensity:intensity}).success(function(response){
-				console.log(response + 'in questions client');
+				console.log('The Activity is '+ response.name);
+				activity= response.name;
+				$http.post('/history/record/'+ username + '/' + activity).success(function(response){
+					console.log(response + 'saved');
+				});
 			});
-			http.post('/history/record').success(function(response){
-				console.log(response + 'saved');
-			})
+			//$http.post('/history/record/'+ username + '/' + activity).success(function(response){
+			//	console.log(response + 'saved');
+			//});
 
 		};
 
