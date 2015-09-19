@@ -23,7 +23,7 @@ var HistorySchema = new Schema({
 
 
 function History(history) {
-    this.username = history.name;
+    this.username = history.username;
     this.date = history.date;
     this.activity = history.activity;
 }
