@@ -9,7 +9,7 @@ var _ = require('lodash'),
 
 exports.record = function(req, res) {
     console.log(req.params);
-    History.findOneAndUpdate({username: req.params.username},{$push: {date:Date.now(), activity:req.params.activity}},
+    History.findOneAndUpdate({email: req.params.email},{$push: {date:Date.now(), activity:req.params.activity}},
     {upsert:true}, function(err,object){
         if (err) return res.send(500, { error: err });
         return res.send('succesfully saved');
