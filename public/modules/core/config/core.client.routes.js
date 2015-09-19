@@ -15,6 +15,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 			.state('questions', {
 				url: '/questions',
 				templateUrl: 'modules/users/views/settings/questions.client.view.html'
+			})
+			.state('activity', {
+				url: '/activity',
+				templateUrl: 'modules/core/views/activity.client.view.html'
 			});
 
 		//if ($scope.authentication.user) {

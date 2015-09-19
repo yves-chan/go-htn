@@ -1,9 +1,7 @@
 <section data-ng-controller="HomeController">
 
 		<div class="row">
-			
-
-				<script>
+			<script>
 				$(function(){
 					$(".element").typed({
 						strings: ["play Basketball.", "on the Garibaldi hike.", "dance.", "join a martial arts class.",
@@ -16,8 +14,6 @@
 			</script>
 
 			<h2>Go <span class="element"></span></h2>	
-
-
 			</div>
 
 			<div class="jumbotron text-center">
@@ -26,11 +22,22 @@
 		<div class="row">
 			<p data-ng-hide="authentication.user">Hello! Welcome to Go.</p>
 
-
-
 			<p class="lead" data-ng-show="authentication.user">
-				Hello <span data-ng-bind="authentication.user.displayFirstName"></span>, how are you feeling today?
+				Hello <span data-ng-bind="authentication.user.displayName"></span>, how are you feeling today?
 			</p>
+
+
+			<input type="image" id="moodButton" src="/modules/users/img//buttons/lazyButton.png" />
+
+			<input type="image" id="moodButton" src="/modules/users/img//buttons/lazyButton.png" />
+
+			<input type="image" id="moodButton" src="/modules/users/img//buttons/lazyButton.png" />
+
+			<script type="text/javascript">
+			    document.getElementById("moodButton").onclick = function () {
+			        location.href = "/#!/activity";
+			    	};
+			</script>
 
 		</div>
 
