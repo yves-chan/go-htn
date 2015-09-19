@@ -16,3 +16,13 @@ exports.getActivity = function(req, res) {
 
 
 };
+
+exports.getActivityByName = function(req, res) {
+    console.log(req.params);
+    Activity.findOne({name: req.params.name}, function(err,object){
+        console.log(object);
+        res.send(object);
+    });
+
+
+};

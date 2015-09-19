@@ -16,7 +16,7 @@ var _ = require('lodash'),
  */
 exports.getIntensity = function(req, res) {
     User.findOne({email: req.params.email}, function(err,object){
-            console.log(object);
+            console.log("[L20:user.activity.server.controller]: " + object.intensityPreference);
             res.send(object.intensityPreference);
         });
 

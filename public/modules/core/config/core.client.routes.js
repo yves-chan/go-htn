@@ -17,8 +17,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 				templateUrl: 'modules/users/views/settings/questions.client.view.html'
 			})
 			.state('activity', {
-				url: '/activity',
-				templateUrl: 'modules/core/views/activity.client.view.html'
+				url: '/activity/:activityName',
+				templateUrl: 'modules/core/views/activity.client.view.html',
+				controller: 'ActivityController',
+				resolve: {
+					activityObj : ['$http', '$stateParams', function($http, $stateParams) {
+						return $http.get('/getActivity/' + $stateParams.activityName, {name: $stateParams.activityName})
+							.success(function (response) {
+								return response;
+							})
+					}]
+				}
 			});
 
 		//if ($scope.authentication.user) {
