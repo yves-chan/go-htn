@@ -1,18 +1,15 @@
 'use strict';
 
-angular.module('core').controller('ActivityController', ['$scope', 'Authentication', 'Menus',
-	function($scope, Authentication, Menus) {
+
+angular.module('core').controller('HomeController', ['$scope', 'Authentication', '$location',
+	function($scope, Authentication, $location) {
+		// This provides Authentication context.
 		$scope.authentication = Authentication;
-		$scope.isCollapsed = false;
-		$scope.menu = Menus.getMenu('topbar');
-
-		$scope.toggleCollapsibleMenu = function() {
-			$scope.isCollapsed = !$scope.isCollapsed;
-		};
-
-		// Collapsing the menu after navigation
-		$scope.$on('$stateChangeSuccess', function() {
-			$scope.isCollapsed = false;
-		});
+		if (!$scope.authentication.user) {
+			$location.path('/signup');
+		}
 	}
+
+
 ]);
+

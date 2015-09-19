@@ -54,3 +54,8 @@
   	padding: 20px;
   	border-radius: 50px;
 }
+
+.img-rounded {
+	height: 140px;
+	width: 140px;
+}
