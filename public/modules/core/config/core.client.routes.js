@@ -17,7 +17,6 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 				templateUrl: 'modules/users/views/settings/questions.client.view.html'
 			});
 
-
 		//if ($scope.authentication.user) {
 		//	$stateProvider.
 		//		state('home', {
