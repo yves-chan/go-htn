@@ -51,7 +51,12 @@
   	border-radius: 50px;
 }
 
+
 /*activity page elements*/
 #likeButtons {
 	padding: 20px;
+}
+.img-rounded {
+	height: 140px;
+	width: 140px;
 }

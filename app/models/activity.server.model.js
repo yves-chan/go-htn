@@ -21,7 +21,8 @@ var ActivitySchema = new Schema({
         default: 5,
         min: 0,
         max: 10,
-    }
+    },
+    prefix:String
 }, {collection:'activities'});
 
 
@@ -29,6 +30,7 @@ function Activity(activity) {
     this.name = activity.name;
     this.mood = activity.mood;
     this.intensity = activity.intensity;
+    this.prefix = activity.prefix;
 }
 
 var activityModel = mongoose.model('Activity', ActivitySchema);
@@ -40,7 +42,8 @@ Activity.prototype.save = function() {
     var activity = {
         name: this.name,
         mood: this.mood,
-        intensity: this.intensity
+        intensity: this.intensity,
+        prefix: this.prefix
     };
     var newActivity = new activityModel(activity);
     newActivity.save(function(err) {

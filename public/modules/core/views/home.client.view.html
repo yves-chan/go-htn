@@ -13,7 +13,8 @@
 				});
 			</script>
 
-			<h2>Go <span class="element" color= ></span></h2>	
+			<h1>Go <span class="element"></span></h1>
+
 			</div>
 
 			<!-- <div class="jumbotron text-center"> -->
@@ -26,13 +27,18 @@
 				Hello <span data-ng-bind="authentication.user.displayName"></span>, how are you feeling today?
 			</p>
 
-			<input type="image" onclick="location.href='/#!/activity';" id="moodButton" src="/modules/users/img//buttons/lazyButton.png" />
+			<img class="img-rounded" ng-click="findActivity('Lazy')" src="/modules/users/img//buttons/lazyButton.png" />
 
-			<input type="image" onclick="location.href='/#!/activity';" id="moodButton" src="/modules/users/img//buttons/lazyButton.png" />
+			<img class="img-rounded" ng-click="findActivity('Adventurous')" src="/modules/users/img//buttons/lazyButton.png" />
 
-			<input type="image" onclick="location.href='/#!/activity';" id="moodButton" src="/modules/users/img/buttons/lazyButton.png" />
+			<img class="img-rounded" ng-click="findActivity('Sporty')" src="/modules/users/img//buttons/lazyButton.png" />
+
+			<!--<script type="text/javascript">-->
+			    <!--document.getElementById("moodButton").onclick = function () {-->
+			        <!--location.href = "/#!/activity";-->
+			    	<!--};-->
+			<!--</script>-->
 			
-		<!-- </div>	 -->
 		
 	</div>
 	<br>Team RuntimeExceptionals

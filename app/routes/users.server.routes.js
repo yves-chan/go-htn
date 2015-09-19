@@ -9,6 +9,12 @@ module.exports = function(app) {
 	// User Routes
 	var users = require('../../app/controllers/users.server.controller');
 
+	//Mood and Intensity
+	app.route('/getIntensity/:email').get(users.getIntensity);
+	app.route('/setIntensity/:email/:intensity').post(users.setIntensity);
+	app.route('/getMood/:email').get(users.getMood);
+	app.route('/setMood/:email/:mood').post(users.setMood);
+
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users').put(users.update);
