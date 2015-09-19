@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
+	db: 'mongodb://yc:yc@ds059702.mongolab.com:59702/hackthenorth' ||process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
 	assets: {
 		lib: {
 			css: [
@@ -24,8 +24,8 @@ module.exports = {
 		js: 'public/dist/application.min.js'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '905471776199764',
+		clientSecret: process.env.FACEBOOK_SECRET || 'f9c49fb8a831585a13283d19799e7c93',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {

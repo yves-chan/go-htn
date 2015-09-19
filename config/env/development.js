@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/mean-dev',
+	db: 'mongodb://yc:yc@ds059702.mongolab.com:59702/hackthenorth'|| 'mongodb://localhost/mean-dev',
 	app: {
 		title: 'MEAN - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '905471776199764',
+		clientSecret: process.env.FACEBOOK_SECRET || 'f9c49fb8a831585a13283d19799e7c93',
 		callbackURL: '/auth/facebook/callback'
 	},
 	twitter: {

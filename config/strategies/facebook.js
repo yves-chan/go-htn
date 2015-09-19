@@ -28,8 +28,8 @@ module.exports = function() {
 				firstName: profile.name.givenName,
 				lastName: profile.name.familyName,
 				displayName: profile.displayName,
-				email: profile.emails[0].value,
-				username: profile.username,
+				email: (profile.emails) ? profile.emails[0].value : '',
+				username: profile.username || profile.id,
 				provider: 'facebook',
 				providerIdentifierField: 'id',
 				providerData: providerData
