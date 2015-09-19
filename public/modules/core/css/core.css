@@ -14,19 +14,25 @@
 	border-color: #78FA89;
 }
 
-/*.css-typing*/
-{
-	width: 30em;
-	white-space:nowrap;
-	overflow:hidden;
-	-webkit-animation: type 5s steps(50, end);
-	animation: type 5s steps(50, end);
+/*.blinking cursor*/
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
 }
-
-@keyframes type{
-	from { width: 0; }
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
 }
-
-@-webkit-keyframes type{
-	from { width: 0; }
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
 }

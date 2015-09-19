@@ -12,3 +12,29 @@
 	right: 10px;
 	position: absolute;
 }
+
+.signup {
+
+	height: 100%;
+	padding-top: 55px;
+	text-align: center;
+	background-image: url(../img/bg.jpg);
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-attachment: scroll;
+	color: #f5f5f5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Montserrat";
+	font-weight: 700;
+}
