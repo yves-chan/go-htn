@@ -1,11 +1,22 @@
 'use strict';
 
 angular.module('users').controller('QuestionsController', ['$scope', '$http', '$location', 'Authentication',
-	function($scope, $http, $location, Authentication) {
+	function($scope, $http, $location, Authentication, $q, $timeout) {
 		$scope.authentication = Authentication;
 
 		var username = $scope.authentication.user.email;
 		console.log($scope.authentication);
+
+		$scope.intensity = 0;
+
+		$scope.save = function () {
+			var deferred = $q.defer();
+			$timeout(function () {
+				$scope.intensity += number;
+				deferred.resolve();
+			}, 2000);
+			return deferred.promise;
+		}
 
 		var activity;
 

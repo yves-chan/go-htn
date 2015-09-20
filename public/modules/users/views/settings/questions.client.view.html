@@ -11,15 +11,23 @@
                 <fieldset>
                     <div class="form-group">
                          <p>Do you prefer outdoor or indoor?</p>
-                        <input type="radio" ng-model="mood" value="Adventurous" /> Yes
-                        <input type="radio" ng-model="mood" value="Lazy" /> No <br />
+                        <input type="radio" ng-model="mood" value="Adventurous" /> Outdoor <br />
+                        <input type="radio" ng-model="mood" value="Lazy" /> Indoor <br />
+                    <br />
                     </div>
                     <div class="form-group">
                          <label>After three miles of running, you ...</label> </br>
-                        <input type="radio" ng-model="intensity" value="1" /> Want to lie in bed <br />
-                        <input type="radio" ng-model="intensity" value="5" /> Are tired, but okay <br />
-                        <input type="radio" ng-model="intensity" value="10" /> Are just getting warmed up <br />
+                        <input type="radio" ng-model="intensity" ng-value="1"/> Want to lie in bed <br />
+                        <input type="radio" ng-model="intensity" ng-value="5"/> Are tired, but okay <br />
+                        <input type="radio" ng-model="intensity" ng-value="10"/> Are just getting warmed up <br />
                     </div>
+                    <div class="form-group">
+                        <label>SkyDiving is...</label> </br>
+                        <input type="radio" ng-model="intensity" ng-value="1"/> Too scary <br />
+                        <input type="radio" ng-model="intensity" ng-value="5"/> Are tired, but okay <br />
+                        <input type="radio" ng-model="intensity" ng-value="10"/> Are just getting warmed up <br />
+                    </div>
+
 
                     <div class="text-center form-group">
                         <button type="submit" class="btn btn-large btn-primary">Get me something to Do!</button>
