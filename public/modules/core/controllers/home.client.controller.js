@@ -22,47 +22,72 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 					//Choose one activity out of those listed in user preferences
 					//var activity = res[Math.floor(Math.random() * res.length)];
 
-					var rand = function(min, max) {
+
+					var checkCounts = function() {
+						for (var i = 0; i<res.length ; i++) {
+							if (res[i].count < 11) {
+								return true;
+							}
+						}
+						return false;
+					};
+
+					var shouldRandom = checkCounts();
+
+					var activity;
+
+					var rand = function (min, max) {
 						return Math.floor(Math.random() * (max - min + 1)) + min;
 					};
 
-					var generateProb = function(activities) {
-						var sumCounter = 0;
-						var probArray = [];
-						for (var i=0; i<activities.length;i++ ){
-							sumCounter += activities[i].count;
+					var chooseAlgorithm = function () {
+						if (shouldRandom) {
+							activity = res[rand(0,res.length-1)];
+							console.log('choosing random');
+						} else {
+
+							var generateProb = function (activities) {
+								var sumCounter = 0;
+								var probArray = [];
+								for (var i = 0; i < activities.length; i++) {
+									sumCounter += activities[i].count;
+								}
+								for (var j = 0; j < activities.length; j++) {
+									probArray[j] = (activities[j].count) / sumCounter;
+								}
+								console.log(probArray);
+
+								return probArray;
+							};
+
+							var generateWeighedList = function (list, weight) {
+								var weighed_list = [];
+
+								// Loop over weights
+								for (var i = 0; i < weight.length; i++) {
+									var multiples = weight[i] * 100;
+
+									// Loop over the list of items
+									for (var j = 0; j < multiples; j++) {
+										weighed_list.push(list[i]);
+									}
+								}
+
+								return weighed_list;
+							};
+
+							var weighsArray = generateProb(res);
+							var weighed_list = generateWeighedList(res, weighsArray);
+
+							var random_num = rand(0, weighed_list.length - 1);
+
+							activity = weighed_list[random_num];
+							console.log('choosing biased selection');
+							console.log(weighed_list[random_num]);
 						}
-						for (var j=0; j<activities.length;j++){
-							probArray[j] = (activities[j].count)/sumCounter;
-						}
-						console.log(probArray);
+					}
 
-						return probArray;
-					};
-
-					var generateWeighedList = function(list, weight) {
-						var weighed_list = [];
-
-						// Loop over weights
-						for (var i = 0; i < weight.length; i++) {
-							var multiples = weight[i] * 100;
-
-							// Loop over the list of items
-							for (var j = 0; j < multiples; j++) {
-								weighed_list.push(list[i]);
-							}
-						}
-
-						return weighed_list;
-					};
-
-					var weighsArray = generateProb(res);
-					var weighed_list = generateWeighedList(res, weighsArray);
-
-					var random_num = rand(0, weighed_list.length-1);
-
-					var activity = weighed_list[random_num];
-					console.log(weighed_list[random_num]);
+					chooseAlgorithm();
 
 					//res.send();
 					$location.path('/activity/' + activity.name);
