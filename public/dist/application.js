@@ -142,6 +142,8 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 			});
 		};
 
+<<<<<<< HEAD
+=======
 		$scope.addNewActivity = function(){
 			$http.post('/postActivity', $scope.credentials).success(function(res) {
 				console.log(res);
@@ -152,6 +154,7 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 			});
 		};
 
+>>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 
 
 	}
@@ -614,12 +617,18 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
 'use strict';
 
 angular.module('users').controller('QuestionsController', ['$scope', '$http', '$location', 'Authentication',
+<<<<<<< HEAD
+	function($scope, $http, $location, Authentication) {
+=======
 	function($scope, $http, $location, Authentication, $q, $timeout) {
+>>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 		$scope.authentication = Authentication;
 
 		var username = $scope.authentication.user.email;
 		console.log($scope.authentication);
 
+<<<<<<< HEAD
+=======
 		$scope.intensity = 0;
 
 		$scope.save = function () {
@@ -631,6 +640,7 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 			return deferred.promise;
 		}
 
+>>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 		var activity;
 
 		$scope.processResults = function() {
