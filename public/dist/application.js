@@ -133,7 +133,7 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 		}
 
 		$scope.DoingIt = function(){
-			$http.post('/history/record/' + $scope.authentication.user.email + '/' + activityName.name).success(function(res) {
+			$http.post('/history/record/' + $scope.authentication.user.username + '/' + activityName.name).success(function(res) {
 				console.log(res);
 				$http.post('/getActivity/'+ activityName.name).success(function(res2){
 					console.log(res2);
@@ -192,11 +192,11 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 			$location.path('/signup');
 		}
 
-		console.log($scope.authentication.user.email);
+		console.log($scope.authentication.user.username);
 
 		$scope.findActivity = function(mood) {
 
-			$http.get('/getIntensity/' + $scope.authentication.user.email).success(function(response) {
+			$http.get('/getIntensity/' + $scope.authentication.user.username).success(function(response) {
 
 				//var intensity = response;
 
@@ -618,7 +618,7 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 	function($scope, $http, $location, Authentication, $q, $timeout) {
 		$scope.authentication = Authentication;
 
-		var username = $scope.authentication.user.email;
+		var username = $scope.authentication.user.username;
 		console.log($scope.authentication);
 
 		$scope.intensity = 0;
@@ -629,7 +629,7 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 				$scope.intensity += number;
 				console.log($scope.intensity);
 				deferred.resolve();
-			}, 2000);
+			}, 750);
 			return deferred.promise;
 		}
 
@@ -674,7 +674,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
 		$scope.loadHistory = function() {
-			$http.get('/history/' + $scope.user.email).success(function(history) {
+			$http.get('/history/' + $scope.user.username).success(function(history) {
 				$scope.historySearched = history[0].activity;
 				$scope.dateSearched = history[0].date;
 
