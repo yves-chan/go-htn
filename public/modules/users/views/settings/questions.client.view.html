@@ -1,34 +1,49 @@
 <section class="row signup" data-ng-controller="QuestionsController">
-    <div class="col-md-6">
+    <div class="col-md-4">
         <h1>Welcome to Go</h1>
         <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
     </div>
-    <div class="col-md-6 text-center">
-
+    <div class = "col-md-8 text-center">
         <h3>Just a few questions to ask you...</h3>
-        <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
-            <form name="userForm" data-ng-submit="processResults()" class="signin form-horizontal" novalidate autocomplete="off">
-                <fieldset>
-                    <div class="form-group">
-                         <p>Do you prefer outdoor or indoor?</p>
-                        <input type="radio" ng-model="mood" value="Adventurous" /> Yes
-                        <input type="radio" ng-model="mood" value="Lazy" /> No <br />
-                    </div>
-                    <div class="form-group">
-                         <label>After three miles of running, you ...</label> </br>
-                        <input type="radio" ng-model="intensity" value="1" /> Want to lie in bed <br />
-                        <input type="radio" ng-model="intensity" value="5" /> Are tired, but okay <br />
-                        <input type="radio" ng-model="intensity" value="10" /> Are just getting warmed up <br />
-                    </div>
+        <div class="col-lg-4">
+            <p>Do you prefer outdoor or indoor?</p>
+            <div class="btn-primary" ng-click="mood='Adventurous'">Outdoor</div>
+            <div class="btn-primary" ng-click="mood='Lazy'">
+                Indoor
+            </div> <br />
+            <p>After three miles of running, you ...</p>
+            <div class="btn-warning" ng-click="save(1)"> Want to lie in bed </div>
+            <div class="btn-warning" ng-click="save(5)"> Are tired, but okay </div>
+            <div class="btn-warning" ng-click="save(10)"> Are just getting warmed up</div></br>
 
-                    <div class="text-center form-group">
-                        <button type="submit" class="btn btn-large btn-primary">Get me something to Do!</button>
-                    </div>
-                    <div data-ng-show="error" class="text-center text-danger">
-                        <strong data-ng-bind="error"></strong>
-                    </div>
-                </fieldset>
-            </form>
+            <p>SkyDiving is...</p>
+            <div class="btn-primary" ng-click="save(1)"> Too scary for me</div>
+            <div class="btn-primary" ng-click="save(5)"> awesome, I'd love to try it</div>
+            <div class="btn-primary" ng-click="save(10)"> okay, I've done it many times</div></br>
+        </div>
+        <div class="col-lg-4">
+            <p>How many times a week are you physically active?</p>
+            <div class="btn-warning" ng-click="save(2)"> Once </div>
+            <div class="btn-warning" ng-click="save(4)"> Twice</div>
+            <div class="btn-warning" ng-click="save(6)"> 3 times a week</div>
+            <div class="btn-warning" ng-click="save(8)"> 4 times a week</div>
+            <div class="btn-warning" ng-click="save(10)"> 5 or more</div></br>
+
+            <p>Your Ideal vacation...</p>
+            <div class="btn-primary" ng-click="save(5)"> is on a beach at Cancun </div>
+            <div class="btn-primary" ng-click="save(10)"> is backpacking in Europe</div>
+            <div class="btn-primary" ng-click="save(1)"> is staying at home</div></br>
+
+            <p>When the Going gets tough</p>
+            <div class="btn-warning" ng-click="save(1)"> Give up </div>
+            <div class="btn-warning" ng-click="save(3)"> Try Again, then give up</div>
+            <div class="btn-warning" ng-click="save(6)"> Do whatever it takes to win</div>
+            <div class="btn-warning" ng-click="save(10)"> Conquer a task, and help a friend</div></br>
+
+            <button type="submit" ng-click="processResults()" class="btn btn-large btn-danger">Get me something to Do!</button>
+            <div data-ng-show="error" class="text-center text-danger">
+                <strong data-ng-bind="error"></strong>
+            </div>
         </div>
     </div>
 </section>
