@@ -15,7 +15,7 @@ angular.module('users').controller('QuestionsController', ['$scope', '$http', '$
 				$scope.intensity += number;
 				console.log($scope.intensity);
 				deferred.resolve();
-			}, 2000);
+			}, 750);
 			return deferred.promise;
 		}
 
