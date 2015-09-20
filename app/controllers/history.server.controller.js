@@ -5,7 +5,8 @@
 'use strict';
 var _ = require('lodash'),
     mongoose = require('mongoose'),
-    History = mongoose.model('History');
+    History = mongoose.model('History'),
+    Activity = mongoose.model('Activity');
 
 exports.record = function(req, res) {
     console.log(req.params);
@@ -14,6 +15,10 @@ exports.record = function(req, res) {
         if (err) return res.send(500, { error: err });
         return res.send('succesfully saved');
     });
+
+    console.log("L19 @ history.controller : " + typeof req.params.activity);
+    Activity.findOneAndUpdate({name: req.params.activity}, {$inc: {count: 1}}, {upsert:true});
+
 
 
 };

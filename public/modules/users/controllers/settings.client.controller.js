@@ -19,6 +19,12 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		$scope.loadHistory = function() {
 			$http.get('/history/' + $scope.user.email).success(function(history) {
 				$scope.historySearched = history[0].activity;
+				$scope.dateSearched = history[0].date;
+
+				for (var i = 0; i > $scope.dateSearched.length; i++) {
+					$scope.dateSearched[i] =  $scope.dateSearched[i].toDateString();
+
+				}
 				console.log(history);
 			})
 
