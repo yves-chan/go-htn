@@ -35,6 +35,7 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 				$http.post('/getActivity/'+ activityName.name).success(function(res2){
 					console.log(res2);
 				});
+				alert("Yay! Have fun!");
 				$location.path('/');
 			});
 		};
