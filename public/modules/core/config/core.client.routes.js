@@ -16,6 +16,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 				url: '/questions',
 				templateUrl: 'modules/users/views/settings/questions.client.view.html'
 			})
+			.state('newactivity', {
+				url: '/newactivity',
+				templateUrl: 'modules/core/views/newactivity.client.view.html'
+			})
 			.state('activity', {
 				url: '/activity/:activityName',
 				templateUrl: 'modules/core/views/activity.client.view.html',

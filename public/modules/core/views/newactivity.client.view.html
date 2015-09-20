@@ -1,0 +1,41 @@
+<section class="row signup" data-ng-controller="ActivityController">
+    <div class="col-md-6">
+        <h1>Add a new Activity!</h1>
+        <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
+    </div>
+    <div class="col-md-6 text-center">
+
+        <div class="col-xs-offset-2 col-xs-8 col-md-offset-3 col-md-6">
+            <form name="userForm" data-ng-submit="addNewActivity()" class="signin form-horizontal" novalidate autocomplete="off">
+                <fieldset>
+                    <div class="form-group">
+                        <!-- <label for="firstName">First Name</label> -->
+                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="Activity Name">
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="lastName">Last Name</label> -->
+                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Intensity">
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="email">Email</label> -->
+                        <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="username">Username</label> -->
+                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="password">Password</label> -->
+                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                    </div>
+                    <div class="text-center form-group">
+                        <button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
+                    </div>
+                    <div data-ng-show="error" class="text-center text-danger">
+                        <strong data-ng-bind="error"></strong>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
