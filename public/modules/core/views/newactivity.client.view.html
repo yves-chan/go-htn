@@ -1,7 +1,7 @@
 <section class="row signup" data-ng-controller="ActivityController">
     <div class="col-md-6">
         <h1>Add a new Activity!</h1>
-        <p>Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
+        <p>“A person should set his goals as early as he can and devote all his energy and talent to getting there. With enough effort, he may achieve it. Or he may find something that is even more rewarding. But in the end, no matter that the outcome, he will know he has been alive.”</p>
     </div>
     <div class="col-md-6 text-center">
 
@@ -10,23 +10,23 @@
                 <fieldset>
                     <div class="form-group">
                         <!-- <label for="firstName">First Name</label> -->
-                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="Activity Name">
+                        <input type="text" required id="firstName" name="firstName" class="form-control" data-ng-model="credentials.name" placeholder="Activity Name">
                     </div>
                     <div class="form-group">
                         <!-- <label for="lastName">Last Name</label> -->
-                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.lastName" placeholder="Intensity">
+                        <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="credentials.intensity" placeholder="Intensity">
                     </div>
                     <div class="form-group">
                         <!-- <label for="email">Email</label> -->
-                        <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email" placeholder="Email">
+                        <input type="text" id="email" name="email" class="form-control" data-ng-model="credentials.mood" placeholder="mood">
                     </div>
                     <div class="form-group">
                         <!-- <label for="username">Username</label> -->
-                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username">
+                        <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.prefix" placeholder="prefix">
                     </div>
                     <div class="form-group">
                         <!-- <label for="password">Password</label> -->
-                        <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+                        <input type="number" id="count" name="count" class="form-control" data-ng-model="credentials.count" placeholder="count">
                     </div>
                     <div class="text-center form-group">
                         <button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
