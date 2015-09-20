@@ -17,7 +17,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		};
 
 		$scope.loadHistory = function() {
-			$http.get('/history/' + $scope.user.email).success(function(history) {
+			$http.get('/history/' + $scope.user.username).success(function(history) {
 				$scope.historySearched = history[0].activity;
 				$scope.dateSearched = history[0].date;
 
