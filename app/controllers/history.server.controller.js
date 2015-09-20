@@ -16,10 +16,6 @@ exports.record = function(req, res) {
         return res.send('succesfully saved');
     });
 
-    console.log("L19 @ history.controller : " + typeof req.params.activity);
-    Activity.findOneAndUpdate({name: req.params.activity}, {$inc: {count: 1}}, {upsert:true});
-
-
 
 };
 
