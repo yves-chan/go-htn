@@ -138,12 +138,11 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 				$http.post('/getActivity/'+ activityName.name).success(function(res2){
 					console.log(res2);
 				});
+				alert("Yay! Have fun!");
 				$location.path('/');
 			});
 		};
 
-<<<<<<< HEAD
-=======
 		$scope.addNewActivity = function(){
 			$http.post('/postActivity', $scope.credentials).success(function(res) {
 				console.log(res);
@@ -154,7 +153,6 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 			});
 		};
 
->>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 
 
 	}
@@ -616,35 +614,29 @@ angular.module('users').controller('PasswordController', ['$scope', '$stateParam
 ]);
 'use strict';
 
-angular.module('users').controller('QuestionsController', ['$scope', '$http', '$location', 'Authentication',
-<<<<<<< HEAD
-	function($scope, $http, $location, Authentication) {
-=======
+angular.module('users').controller('QuestionsController', ['$scope', '$http', '$location', 'Authentication', '$q', '$timeout',
 	function($scope, $http, $location, Authentication, $q, $timeout) {
->>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 		$scope.authentication = Authentication;
 
 		var username = $scope.authentication.user.email;
 		console.log($scope.authentication);
 
-<<<<<<< HEAD
-=======
 		$scope.intensity = 0;
 
-		$scope.save = function () {
+		$scope.save = function (number) {
 			var deferred = $q.defer();
 			$timeout(function () {
 				$scope.intensity += number;
+				console.log($scope.intensity);
 				deferred.resolve();
 			}, 2000);
 			return deferred.promise;
 		}
 
->>>>>>> cc90b4bbd794bcc349f0981654becb3e919d2f00
 		var activity;
 
 		$scope.processResults = function() {
-			var intensity = $scope.intensity;
+			var intensity = $scope.intensity/5;
 			var mood = $scope.mood;
 			console.log(mood + intensity);
 
