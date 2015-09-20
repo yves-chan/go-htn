@@ -9,11 +9,11 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 			$location.path('/signup');
 		}
 
-		console.log($scope.authentication.user.email);
+		console.log($scope.authentication.user.username);
 
 		$scope.findActivity = function(mood) {
 
-			$http.get('/getIntensity/' + $scope.authentication.user.email).success(function(response) {
+			$http.get('/getIntensity/' + $scope.authentication.user.username).success(function(response) {
 
 				//var intensity = response;
 

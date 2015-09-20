@@ -30,7 +30,7 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 		}
 
 		$scope.DoingIt = function(){
-			$http.post('/history/record/' + $scope.authentication.user.email + '/' + activityName.name).success(function(res) {
+			$http.post('/history/record/' + $scope.authentication.user.username + '/' + activityName.name).success(function(res) {
 				console.log(res);
 				$http.post('/getActivity/'+ activityName.name).success(function(res2){
 					console.log(res2);

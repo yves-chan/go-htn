@@ -15,14 +15,14 @@ var _ = require('lodash'),
  * Signup
  */
 exports.getIntensity = function(req, res) {
-    User.findOne({email: req.params.email}, function(err,object){
+    User.findOne({username: req.params.username}, function(err,object){
             console.log("[L20:user.activity.server.controller]: " + object.intensityPreference);
             res.send(object.intensityPreference);
         });
 
 };
 exports.setIntensity = function(req, res) {
-    User.findOneAndUpdate({email: req.params.email},{$set: {intensityPreference:req.params.intensity}},
+    User.findOneAndUpdate({username: req.params.username},{$set: {intensityPreference:req.params.intensity}},
         {upsert:true}, function(err,object){
             if (err) return res.send(500, { error: err });
             return res.send('succesfully saved');
@@ -30,14 +30,14 @@ exports.setIntensity = function(req, res) {
 
 };
 exports.getMood = function(req, res) {
-    User.findOne({email: req.params.email}, function(err,object){
+    User.findOne({username: req.params.username}, function(err,object){
         console.log(object);
         res.send(object.moodPreference);
     });
 
 };
 exports.setMood = function(req, res) {
-    User.findOneAndUpdate({email: req.params.email},{$set: {moodPreference:req.params.mood}},
+    User.findOneAndUpdate({username: req.params.username},{$set: {moodPreference:req.params.mood}},
         {upsert:true}, function(err,object){
             if (err) return res.send(500, { error: err });
             return res.send('succesfully saved');
