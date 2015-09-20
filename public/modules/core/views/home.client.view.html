@@ -1,6 +1,6 @@
 <section data-ng-controller="HomeController">
 
-		<div class="row">
+	<div class="row">
 			<script>
 				$(function(){
 					$(".element").typed({
@@ -15,26 +15,31 @@
 
 			<h1>Go <span class="element"></span></h1>
 
-			</div>
+	</div>
 
 			<!-- <div class="jumbotron text-center"> -->
 
 		<br>
-		<div class="row">
+	<div class="row">
 			<p data-ng-hide="authentication.user">Hello! Welcome to Go.</p>
 
 			<p class="lead" data-ng-show="authentication.user">
 				Hello <span data-ng-bind="authentication.user.displayName"></span>, how are you feeling today?
 			</p>
 
-			<img class="img-rounded" ng-click="findActivity('Lazy')" src="/modules/users/img//buttons/lazyButton.png" />
+			<img class="img-rounded hvr-grow" ng-click="findActivity('Lazy')" src="/modules/users/img//buttons/lazyButton.png" />
 
-			<img class="img-rounded" ng-click="findActivity('Adventurous')" src="/modules/users/img//buttons/adventurousButton.png" />
+			<img class="img-rounded hvr-grow" ng-click="findActivity('Adventurous')" src="/modules/users/img//buttons/adventurousButton.png" />
 
-			<img class="img-rounded" ng-click="findActivity('Sporty')" src="/modules/users/img//buttons/sportyButton.png" />
+			<img class="img-rounded hvr-grow" ng-click="findActivity('Sporty')" src="/modules/users/img//buttons/sportyButton.png" />
 
 		
 	</div>
-	<br>Team RuntimeExceptionals
-	<br>Hack the North 2015
+	<div class="featured">
+
+		<h3>Most Popular</h3>
+		<hr class="small">
+
+	</div>
+
 </section>
