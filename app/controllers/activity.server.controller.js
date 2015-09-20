@@ -33,4 +33,14 @@ exports.increaseCount = function(req, res) {
         console.log(object);
         res.send(object);
     });
-}
+};
+
+exports.postActivity = function(req, res) {
+    console.log(req.body);
+    Activity.save(req.body.params, function(err,object){
+        console.log(object);
+        res.send(object);
+    });
+
+
+};

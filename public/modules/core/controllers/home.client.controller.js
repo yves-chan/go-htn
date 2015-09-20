@@ -20,8 +20,6 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 				$http.get('/getActivity/' + mood + '/' + response).success(function(res) {
 						console.log(res);
 					//Choose one activity out of those listed in user preferences
-					//var activity = res[Math.floor(Math.random() * res.length)];
-
 
 					var checkCounts = function() {
 						for (var i = 0; i<res.length ; i++) {
@@ -50,10 +48,18 @@ angular.module('core').controller('HomeController', ['$scope', '$http', 'Authent
 								var sumCounter = 0;
 								var probArray = [];
 								for (var i = 0; i < activities.length; i++) {
-									sumCounter += activities[i].count;
+									try {
+										sumCounter += activities[i].count;
+									} catch (err) {
+										console.log('Some items do not have counts');
+									}
 								}
 								for (var j = 0; j < activities.length; j++) {
-									probArray[j] = (activities[j].count) / sumCounter;
+									try {
+										probArray[j] = (activities[j].count) / sumCounter;
+									} catch (err){
+										console.log('Some items do not have counts');
+									}
 								}
 								console.log(probArray);
 
