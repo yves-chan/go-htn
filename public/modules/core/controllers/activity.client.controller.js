@@ -32,9 +32,12 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 		$scope.DoingIt = function(){
 			$http.post('/history/record/' + $scope.authentication.user.email + '/' + activityName.name).success(function(res) {
 				console.log(res);
-				$location.path('/')
-			})
-		}
+				$http.post('/getActivity/'+ activityName.name).success(function(res2){
+					console.log(res2);
+				});
+				$location.path('/');
+			});
+		};
 
 
 

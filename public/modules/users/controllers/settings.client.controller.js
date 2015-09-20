@@ -26,7 +26,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 
 				}
 				console.log(history);
-			})
+			});
 
 		};
 

@@ -29,7 +29,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 						return $http.get('/getActivity/' + $stateParams.activityName, {name: $stateParams.activityName})
 							.success(function (response) {
 								return response;
-							})
+							});
 					}]
 				}
 			});
