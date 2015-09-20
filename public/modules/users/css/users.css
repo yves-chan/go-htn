@@ -18,7 +18,8 @@ body {
 	height: 100%;
 	padding-top: 55px;
 	text-align: center;
-	background-image: url(../img/bg_blur_3.jpg);
+	/*background-image:url(../img/bg_blur_3.jpg); for dev*/
+	background-image: url(../modules/users/img/bg_blur_3.jpg);
 	background-position: center center;
 	background-repeat: none;
 	-webkit-background-size: cover;
