@@ -20,9 +20,10 @@ var ActivitySchema = new Schema({
         type: Number,
         default: 5,
         min: 0,
-        max: 10,
+        max: 10
     },
-    prefix:String
+    prefix:String,
+    count: Number
 }, {collection:'activities'});
 
 
@@ -31,6 +32,7 @@ function Activity(activity) {
     this.mood = activity.mood;
     this.intensity = activity.intensity;
     this.prefix = activity.prefix;
+    this.count = activity.count
 }
 
 var activityModel = mongoose.model('Activity', ActivitySchema);
@@ -43,7 +45,8 @@ Activity.prototype.save = function() {
         name: this.name,
         mood: this.mood,
         intensity: this.intensity,
-        prefix: this.prefix
+        prefix: this.prefix,
+        count: this.count
     };
     var newActivity = new activityModel(activity);
     newActivity.save(function(err) {

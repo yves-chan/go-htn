@@ -38,13 +38,16 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>&nbsp</th>
 					<th>Name</th>
+					<th>Date</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="activity in historySearched track by $index">
-					<!--<td data-ng-hide="activity.name">You haven't done anything yet :(</td>-->
+					<td>{{ $index+1 }}</td>
 					<td>{{ activity }}</td>
+					<td>{{ dateSearched[$index] }}</td>
 				</tr>
 			</tbody>
 		</table>
