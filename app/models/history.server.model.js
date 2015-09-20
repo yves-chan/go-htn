@@ -14,16 +14,16 @@ var mongoose = require('mongoose'),
  * Activity Schema
  */
 var HistorySchema = new Schema({
-    username: String,
+    email: String,
     date: {
-        type:Date
+        type:[Date]
     },
-    activity: String
+    activity: [String]
 }, {collection:'histories'});
 
 
 function History(history) {
-    this.username = history.username;
+    this.email = history.email;
     this.date = history.date;
     this.activity = history.activity;
 }
@@ -35,7 +35,7 @@ var historyModel = mongoose.model('History', HistorySchema);
  */
 History.prototype.save = function() {
     var history = {
-        username: this.username,
+        email: this.email,
         date: this.date,
         activity: this.activity
     };
@@ -50,9 +50,9 @@ History.prototype.save = function() {
 /**
  * Find all histories for a user
  */
-History.getAll = function(username, callback) {
+History.getAll = function(email, callback) {
     historyModel.find(
-        {username: username},
+        {email: email},
         function(err, doc) {
             if (err) {
                 return callback(err);

@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('ActivityController', ['$scope', 'Authentication', '$location', 'activityObj',
-	function($scope, Authentication, $location, activityObj) {
+angular.module('core').controller('ActivityController', ['$scope', 'Authentication', '$location', 'activityObj', '$http',
+	function($scope, Authentication, $location, activityObj, $http) {
 		// This provides Authentication context.
 
 		var activityName = activityObj.data;
@@ -14,6 +14,13 @@ angular.module('core').controller('ActivityController', ['$scope', 'Authenticati
 		$scope.authentication = Authentication;
 		if (!$scope.authentication.user) {
 			$location.path('/signup');
+		}
+
+		$scope.DoingIt = function(){
+			$http.post('/history/record/' + $scope.authentication.user.email + '/' + activityName.name).success(function(res) {
+				console.log(res);
+				$location.path('/')
+			})
 		}
 
 
